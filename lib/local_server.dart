@@ -2,7 +2,6 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:flutter/services.dart';
-import 'package:mime/mime.dart';
 
 /*
  * credit thanks to https://github.com/shah-xad/flutter_tex/blob/master/lib/src/utils/tex_view_server.dart
@@ -51,11 +50,11 @@ class LocalServer {
           var contentType = ['text', 'html'];
           if (!httpRequest.requestedUri.path.endsWith('/') &&
               httpRequest.requestedUri.pathSegments.isNotEmpty) {
-            var mimeType = lookupMimeType(httpRequest.requestedUri.path,
-                headerBytes: body);
-            if (mimeType != null) {
-              contentType = mimeType.split('/');
-            }
+            // var mimeType = lookupMimeType(httpRequest.requestedUri.path,
+            //     headerBytes: body);
+            // if (mimeType != null) {
+            //   contentType = mimeType.split('/');
+            // }
           }
 
           httpRequest.response.headers.contentType =

@@ -7,10 +7,11 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:html_editor/local_server.dart';
-import 'package:html_editor/pick_image.dart';
 import 'package:path/path.dart' as p;
 import 'package:webview_flutter/webview_flutter.dart';
+
+import 'local_server.dart';
+import 'pick_image.dart';
 
 /*
  * Created by riyadi rb on 2/5/2020.
@@ -154,11 +155,11 @@ class HtmlEditorState extends State<HtmlEditor> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[
-                      widgetIcon(Icons.image, "Image", onKlik: () {
-                        widget.useBottomSheet
-                            ? bottomSheetPickImage(context)
-                            : dialogPickImage(context);
-                      }),
+                      // widgetIcon(Icons.image, "Image", onKlik: () {
+                      //   widget.useBottomSheet
+                      //       ? bottomSheetPickImage(context)
+                      //       : dialogPickImage(context);
+                      // }),
                       widgetIcon(Icons.content_copy, "Copy", onKlik: () async {
                         String data = await getText();
                         Clipboard.setData(new ClipboardData(text: data));

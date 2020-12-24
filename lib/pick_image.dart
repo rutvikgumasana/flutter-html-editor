@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
+// import 'package:image_picker/image_picker.dart';
 
 /*
  * Created by riyadi rb on 2/5/2020.
@@ -7,6 +7,7 @@ import 'package:image_picker/image_picker.dart';
  */
 
 typedef void CallbackValue(dynamic value);
+
 class PickImage extends StatelessWidget {
   final CallbackValue callbackFile;
   final Color color;
@@ -33,7 +34,7 @@ class PickImage extends StatelessWidget {
                     child: FlatButton(
                       padding: const EdgeInsets.all(10),
                       onPressed: () {
-                        getImage(true);
+                        // getImage(true);
                         Navigator.pop(context);
                       },
                       child: Column(
@@ -61,7 +62,7 @@ class PickImage extends StatelessWidget {
                     child: FlatButton(
                       padding: const EdgeInsets.all(10),
                       onPressed: () {
-                        getImage(false);
+                        // getImage(false);
                         Navigator.pop(context);
                       },
                       child: Column(
@@ -93,15 +94,15 @@ class PickImage extends StatelessWidget {
     );
   }
 
-  Future getImage(bool isKamera) async {
-    var image = await ImagePicker.pickImage(
-      source: isKamera ? ImageSource.camera : ImageSource.gallery,
-      maxWidth: 800.0,
-      maxHeight: 600.0,
-    );
+  // Future getImage(bool isKamera) async {
+  //   var image = await ImagePicker.pickImage(
+  //     source: isKamera ? ImageSource.camera : ImageSource.gallery,
+  //     maxWidth: 800.0,
+  //     maxHeight: 600.0,
+  //   );
 
-    if (image != null) {
-      callbackFile(image);
-    }
-  }
+  //   if (image != null) {
+  //     callbackFile(image);
+  //   }
+  // }
 }
